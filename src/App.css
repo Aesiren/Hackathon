@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +24,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,4 +42,80 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 20% 80%;
+  background-color: #1e1447;
+  color: #83cdc2;
+  width: 1280px;
+
+
+}
+
+.titlebar {
+  border: 10px;
+  border-style: inset;
+  border-color: #e7c74b;
+  width: 100%;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.title {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+
+.sidebar {
+  border: 10px;
+  border-style: inset;
+  border-color: #e7c74b;
+}
+
+.mainpage {
+  border: 10px;
+  border-style: inset;
+  border-color: #e7c74b;
+  display: grid;
+  grid-column: 50% 50%;
+  justify-items: center;
+}
+
+.card {
+  border: 2px;
+  border-color: #1d3763;
+  border-style: groove;
+  width: 75%;
+}
+
+.image {
+  width: 50px;
+  height: 75px;
+}
+
+.loading {
+  height: 200px;
+  width: 200px;
+  transform-origin: center;
+  animation: rotate 3s linear infinite;
+}
+
+.loading img {
+  width: 200%;
+  height: 200%;
+  transform: translate(-25%, -25%);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
