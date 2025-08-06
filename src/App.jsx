@@ -16,7 +16,7 @@ import Info from './Pages/Info';
 import Domains from './Pages/Domains';
 import { CharacterContext } from "./Context/CharacterContext";
 import { NewContext } from "./Context/NewContext";
-
+//testing branch
 function TitleBar() {
 
   return (
@@ -69,6 +69,8 @@ function App() {
     background: [],
     connections: []
   })
+
+
 
   useEffect(() => {
     console.log(newChar)
