@@ -12,6 +12,14 @@ import Loading from './Loading'
 
 function CharacterReview() {
   const { newChar } = useContext(NewContext);
+
+  function saveChar() {
+    fetch('http://localhost:3001/characters/save', {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ character: newChar }),
+    });
+  }
   return (
     <div className="mainpage">
 
@@ -38,7 +46,7 @@ function CharacterReview() {
       Background: {newChar.background.map((back) => {
         return { back }
       })}
-
+      <button onClick={saveChar}>Save</button>
 
     </div>
   )

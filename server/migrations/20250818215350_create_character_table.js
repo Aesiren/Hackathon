@@ -12,7 +12,7 @@ exports.up = function (knex) {
     table.string('ancestry');
     table.string('community');
     table.string('class');
-    table.string('sub-class');
+    table.string('subclass');
     table.integer('level');
     table.integer('evasion');
     table.integer('armor');
@@ -34,5 +34,6 @@ exports.up = function (knex) {
  * @returns { Promise<void> }
  */
 exports.down = function (knex) {
-
+  return knex.schema.dropTableIfExists('character_table');
 };
+

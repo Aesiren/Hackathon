@@ -85,7 +85,8 @@ function App() {
   const [character, setCharacter] = useState([]);
   const [user, setUser] = useState("userName=''");
   const [newChar, setNewChar] = useState({
-    name: "",
+    user_id: 1,
+    name: "Test",
     pronouns: "",
     ancestry: [],
     community: [],

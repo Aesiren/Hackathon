@@ -14,6 +14,7 @@ const cookies = require('cookie');
 const knex = require('knex')(require('./knexfile.js')[process.env.NODE_ENV || 'development'])
 
 app.use(cors())
+app.use(express.json());
 
 
 // app.get('/user', function (req, res) {
@@ -57,6 +58,30 @@ app.get('/users', function (req, res) {
     })
 })
 
+app.post('/characters/save', async function (req, res) {
+  console.log('character save called');
+  const character = req.body.character;
+
+  try {
+    await knex('character_table').insert(character);
+    res.status(200).json({ message: "Character saved successfully" })
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to save character' });
+  }
+
+
+})
+
+app.get('/characters/:userID', (req, res) => {
+  knex('character')
+    .select('*')
+    .from('character_table')
+    .where('user_id', req.params.userID)
+    .then(data => {
+      res.status(200).json(data);
+    })
+})
 app.get('/classes', (req, res) => {
   res.status(200).json(classes);
   console.log("received request for classes")
